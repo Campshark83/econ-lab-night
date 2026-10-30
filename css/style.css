@@ -1,3 +1,7 @@
+@font-face { font-family: 'Bricolage Grotesque'; font-weight: 600; font-display: swap; src: url(../fonts/bricolage-grotesque-latin-600-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Bricolage Grotesque'; font-weight: 800; font-display: swap; src: url(../fonts/bricolage-grotesque-latin-800-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 400; font-display: swap; src: url(../fonts/atkinson-hyperlegible-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 700; font-display: swap; src: url(../fonts/atkinson-hyperlegible-latin-700-normal.woff2) format('woff2'); }
 :root {
   --paper: #F2F5FA;
   --grid: rgba(22, 35, 63, 0.055);
@@ -143,7 +147,7 @@ legend { font-weight: 700; margin-bottom: 8px; }
 .slider-out { font-family: var(--display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--line); min-width: 2.2ch; text-align: right; }
 .slider.touched .slider-out { color: var(--ink); }
 .slider input { grid-column: 1 / -1; width: 100%; height: 44px; accent-color: var(--ink); margin: 0; }
-.slider-ends { grid-column: 1 / -1; display: flex; justify-content: space-between; color: var(--ink-2); font-size: .85rem; margin-top: -6px; }
+.slider-ends { font-family: var(--display); grid-column: 1 / -1; display: flex; justify-content: space-between; color: var(--ink-2); font-size: .85rem; margin-top: -6px; }
 .choice { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
 .choice-btn { font: 800 1.2rem var(--display); padding: 26px 10px; border: 2px solid var(--ink); border-radius: 14px; background: #fff; color: var(--ink); cursor: pointer; }
 .choice-btn[aria-checked="true"] { background: var(--ink); color: var(--hi); }
@@ -161,7 +165,7 @@ legend { font-weight: 700; margin-bottom: 8px; }
 .chart-wrap { margin: 14px 0; }
 .chart-wrap figcaption { color: var(--ink-2); font-size: .88rem; margin-top: 6px; }
 .chart { width: 100%; height: auto; display: block; overflow: visible; }
-.chart text { font-family: var(--body); font-size: 14px; fill: var(--ink); }
+.chart text { font-family: var(--display); font-weight: 600; font-size: 14px; fill: var(--ink); }
 .chart .axis { stroke: var(--ink); stroke-width: 2; }
 .chart .tick { stroke: var(--ink); stroke-width: 1.5; }
 .chart .tick-label { fill: var(--ink-2); font-size: 12px; }
@@ -239,3 +243,5 @@ legend { font-weight: 700; margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+.tk strong, .rules strong, .you-result p, .locked p { font-family: var(--display); font-weight: 700; }
+.you-result p:first-child, .locked p:not(.locked-title) { font-family: var(--body); font-weight: 400; }

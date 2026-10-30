@@ -30,9 +30,9 @@ export function stripChart({ min, max, points, markers = [], unit = '', ticks })
   markers.forEach((m, i) => {
     const mx = x(Math.max(min, Math.min(max, m.v)));
     const ly = 14 + i * 22;
-    s += `<line class="mk ${m.cls}" x1="${mx}" x2="${mx}" y1="${ly + 6}" y2="${base}" />`;
-    const anchor = mx > W - 90 ? 'end' : mx < 90 ? 'start' : 'middle';
-    s += `<text class="mk-label ${m.cls}" x="${mx}" y="${ly}" text-anchor="${anchor}">${esc(m.label)}</text>`;
+    s += `<line class="mk ${m.cls}" x1="${mx}" x2="${mx}" y1="${ly - 10}" y2="${base}" />`;
+    const right = mx > W - 110;
+    s += `<text class="mk-label ${m.cls}" x="${right ? mx - 6 : mx + 6}" y="${ly + 4}" text-anchor="${right ? 'end' : 'start'}">${esc(m.label)}</text>`;
   });
   // axis
   s += `<line class="axis" x1="${padL}" x2="${W - padR}" y1="${base}" y2="${base}" />`;
